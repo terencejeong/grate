@@ -2,7 +2,8 @@
 
 <p>
   <strong>Avatar data:</strong>
-  <%= @profile.avatar_data %>
+  <img src="<%= @profile.avatar_url%>">
+  <%=  %>
 </p>
 
 <p>
@@ -25,10 +26,6 @@
   <%= @profile.username %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', root_path %>
