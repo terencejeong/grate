@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :items
   devise_for :users, :controllers => { registrations: 'registrations' }
 
-  resources :users, only: [:show, :update], controller: :profiles
+  resources :users, only: [:show, :update, :index], controller: :profiles
   resource :profile
   get 'home/index'
 
