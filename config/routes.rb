@@ -2,8 +2,17 @@ Rails.application.routes.draw do
   resources :items
   devise_for :users, :controllers => { registrations: 'registrations' }
 
-  resources :users, only: [:show, :update, :index], controller: :profiles
+  resources :users, only: [:show, :update, :index, :contact, :destroy], controller: :profiles
   resource :profile
+
+
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+    resources :messages, only: [:create]
+  end
+
   get 'home/index'
 
   root 'home#index'

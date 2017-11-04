@@ -5,13 +5,21 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
+    session[:conversations] ||= []
+
+  @users = User.all.where.not(id: current_user)
+  @conversations = Conversation.includes(:recipient, :messages)
+                               .find(session[:conversations])
   end
 
   # GET /profiles/1
   # GET /profiles/1.json
   def show
     redirect_to edit_profile_url if @profile.nil?
+    @user = User.find(params[:id])
+    @conversations = Conversation.includes(:recipient, :messages)
   end
+
 
   # GET /profiles/new
   def new
@@ -31,7 +39,7 @@ class ProfilesController < ApplicationController
     @profile.user = current_user
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
@@ -78,8 +86,17 @@ class ProfilesController < ApplicationController
       end
     end
 
+    def add_to_conversations
+  session[:conversations] ||= []
+  session[:conversations] << @conversation.id
+    end
+
+    def conversated?
+      session[:conversations].include?(@conversation.id)
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
       params.require(:profile).permit(:avatar, :about_me, :first_name, :last_name, :username, :user_id)
     end
-end
+  end
