@@ -20,5 +20,13 @@
   <img src="<%= @item.image_url%>">
 </p>
 
+<div class="row">
+  <div class="col-md-9">
+    <ul class='coolbeans' id="conversations-list">
+    </ul>
+  </div>
+
+    <li><%= link_to 'Contact Me', conversations_path(user_id: @user), remote: true, method: :post %></li>
+
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
