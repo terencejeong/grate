@@ -18,12 +18,11 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><%= profile.avatar_data %></td>
+        <td><img src="<%= profile.avatar_url%>"></td>
         <td><%= profile.about_me %></td>
         <td><%= profile.first_name %></td>
         <td><%= profile.last_name %></td>
         <td><%= profile.username %></td>
-        <td><%= profile.user %></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
