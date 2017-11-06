@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>User:</strong>
-  <%= @item.user %>
+  <%= @item.user.email %>
 </p>
 
 <p>
@@ -26,7 +27,8 @@
     </ul>
   </div>
 
-    <li><%= link_to 'Contact Me', conversations_path(user_id: @user), remote: true, method: :post %></li>
-
+    <% if @item.user != current_user %>
+    <li><%= link_to @item.user.email, conversations_path(user_id: @item), remote: true, method: :post %></li>
+    <% end%>
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

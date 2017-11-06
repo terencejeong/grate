@@ -1,11 +1,12 @@
 <li>
   <div class="card card-default" data-conversation-id="<%= conversation.id %>">
     <div class="card-heading">
+      <%=conversation.opposed_user(user).email%>
       <%= link_to conversation.opposed_user(user).email, '', class: 'toggle-window' %>
       <%= link_to "x", close_conversation_path(conversation), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %>
     </div>
 
-    <div class="card-body" style="display: none;">
+    <div class="card-body profile_card">
       <div class="messages-list">
         <ul class='coolbeans'>
           <%= render 'conversations/conversation_content', messages: conversation.messages, user: user %>
