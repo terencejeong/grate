@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require profiles.scss
  */
 
 @import "bootstrap";
@@ -19,6 +20,16 @@
   padding-left: 0px;
   list-style: none;
 }
+
+// .profile_card{
+//   background-color: #1F2833;
+// }
+//
+//
+// .card-heading{
+//   text-align: center;
+//   background-color:#1F2833
+// }
 
 .messages-list {
   max-height: 200px;
@@ -43,4 +54,16 @@
   margin: 5px 20px;
   padding: 10px;
   float: left;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color:#1F2833;
+  border-color: #66FCF1;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary{
+    color: black;
+    background-color: #66FCF1;
+    border-color: #1F2833; /*set the color you want here*/
 }

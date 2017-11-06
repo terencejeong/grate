@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @user = User.find(params[:id])
+    @item = Item.find(params[:id])
     @conversations = Conversation.includes(:recipient, :messages)
   end
 
@@ -74,6 +74,16 @@ class ItemsController < ApplicationController
     def set_item
       @item = Item.find(params[:id])
     end
+
+    def add_to_conversations
+  session[:conversations] ||= []
+  session[:conversations] << @conversation.id
+    end
+
+    def conversated?
+      session[:conversations].include?(@conversation.id)
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params

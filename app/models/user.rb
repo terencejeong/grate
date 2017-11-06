@@ -7,4 +7,5 @@ class User < ApplicationRecord
 has_many :messages
 has_many :conversations, foreign_key: :sender_id
 has_one :profile
+has_many :items
 end

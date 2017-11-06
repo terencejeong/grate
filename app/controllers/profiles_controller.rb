@@ -99,4 +99,4 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:avatar, :about_me, :first_name, :last_name, :username, :user_id)
     end
-  end
+end
