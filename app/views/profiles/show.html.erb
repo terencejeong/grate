@@ -62,6 +62,22 @@
   <%= @profile.about_me %>
 </p>
 
+
+<strong> <%= @profile.user.id %></strong>
+<%= @profile.username%>
+
+<% @profile.reviews.each do |review|%>
+<%= review.user.profile.username%>
+<%= review.content %>
+<%end%>
+
+
+<%= form_for ([@user, @user.reviews.new]) do |f| %>
+          <!-- <%#= f.label :comments %><br/> -->
+          <%= f.text_field :content,:class => "formComments", placeholder: "Add a comment" %>
+        <% end %>
+
+
 <!-- <p>
   <strong>First name:</strong>
   <%#= @profile.first_name %>
