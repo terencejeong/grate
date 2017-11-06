@@ -5,6 +5,8 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
+    @items = Item.all
+    @reviews = Review.all
     session[:conversations] ||= []
 
   @users = User.all.where.not(id: current_user)
