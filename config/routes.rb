@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  resources :offers
   resources :items
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :users, only: [:show, :update, :index, :contact, :destroy], controller: :profiles do
     resources :reviews, controller: :reviews
-  end 
+  end
   resource :profile
 
+  get 'equipment', to: 'items#equipment', as: 'equipment'
 
   resources :conversations, only: [:create] do
     member do

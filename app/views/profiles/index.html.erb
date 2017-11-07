@@ -18,7 +18,7 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><img src="<%= profile.avatar_url%>"></td>
+        <td><img class='profile_image'src="<%= profile.avatar_url%>"></td>
         <td><%= profile.about_me %></td>
         <td><%= profile.first_name %></td>
         <td><%= profile.last_name %></td>

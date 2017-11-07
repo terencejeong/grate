@@ -18,6 +18,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     redirect_to edit_profile_url if @profile.nil?
+    @profile = Profile.find(params[:id])
     @user = User.find(params[:id])
     @conversations = Conversation.includes(:recipient, :messages)
   end

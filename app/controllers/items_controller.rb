@@ -28,6 +28,10 @@ class ItemsController < ApplicationController
   def edit
   end
 
+  #GET /items for user
+  def equipment
+    @items = Item.where(user_id: params[:user_id])
+  end
   # POST /items
   # POST /items.json
   def create

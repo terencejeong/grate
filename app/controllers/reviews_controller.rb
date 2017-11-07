@@ -4,14 +4,14 @@ class ReviewsController < ApplicationController
 
  def index
 
-  @review = @user.reviews
+  @review = @profile.reviews
  end
 
   def new
   end
 
   def create
-    @profile = User.find(params[:user_id])
+    @profile = Profile.find(params[:user_id])
    @review = @profile.reviews.build(comment_params)
    @review.user_id = current_user.id
    @review.profile_id = @profile.id
@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
 
   def destroy
    @user= User.find(params[:user_id])
-   @review = @user.review.find(params[:id])
+   @review = @user.reviews.find(params[:id])
    @review.destroy
    redirect_to root_path
   end

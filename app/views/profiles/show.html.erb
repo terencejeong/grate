@@ -39,14 +39,15 @@
 
 
 
-
 <p id="notice"><%= notice %></p>
 
-<div class="profile_container">
-<div class='profile_image mx-auto'>
-  <img src="<%= @profile.avatar_url%>">
+<div class="profile_container col-12 mx-auto">
+<div class='cool'>
+  <img class='profile_image'src="<%= @profile.avatar_url%>">
 </div>
 </div>
+
+
 
   <h1 class="view_profile"><%=@profile.username%></h1>
 
@@ -54,28 +55,44 @@
 <% if @profile.id != current_user.id%>
   <%= link_to 'Message Me', conversations_path(user_id: @user), remote: true, method: :post, class: 'btn btn-primary communication' %>
 <%end%>
-<button type="button" class="btn btn-primary">Items for Sale</button>
+<%= link_to "Items for Sale", equipment_path(user_id: @user), class: "btn btn-primary"%>
+<%= link_to 'Book a Show', new_offer_path(profile_id: @profile.id), class: "btn btn-primary"%>
+<!-- <button type="button" class="btn btn-primary">Items for Sale</button> -->
 </div>
 
-<h2 class="view_profile dj_bio"> About the DJ</h1>
-<p class="about_the_dj">
+
+<h2 class="view_profile dj_bio"> About the DJ</h2>
+<p class="about_the_dj col-10 col-12">
   <%= @profile.about_me %>
 </p>
 
+<h2 class="view_profile">Reviews</h2>
+<div class="styling_reviews">
+  <% @profile.reviews.each do |review|%>
+  <img class='little_icons' src='<%=review.user.profile.avatar_url%>'>
+  <h3 class="styling_reviews"><%= link_to "#{review.user.profile.username}", user_path(review.user_id)%></h3>
+    <br>
+  <h4 class="styling_reviews" ><%= review.content %></h4>
+    <br>
+      <% if review.user.id == current_user.id%>
+      <%= link_to 'delete', [review.user, review],
+                       method: :delete,
+                       data: { confirm: 'Are you sure?' }%>
+      <% end %>
+  <% end %>
+</div>
 
-<strong> <%= @profile.user.id %></strong>
-<%= @profile.username%>
-
-<% @profile.reviews.each do |review|%>
-<%= review.user.profile.username%>
-<%= review.content %>
-<%end%>
 
 
+
+<div class="review_sheet">
 <%= form_for ([@user, @user.reviews.new]) do |f| %>
           <!-- <%#= f.label :comments %><br/> -->
-          <%= f.text_field :content,:class => "formComments", placeholder: "Add a comment" %>
-        <% end %>
+  <%= f.text_field :content,:class => "form_review", placeholder: "Add a review" %>
+<%end%>
+</div>
+
+
 
 
 <!-- <p>
@@ -92,12 +109,15 @@
   <strong>Username:</strong>
   <%#= @profile.username %>
 </p>  -->
-
+<!-- <#% if @profile.id != current_user.id%> -->
+  <!-- <iframe width="90%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/122923868&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe> -->
+<!-- <#%end%> -->
 <div class="row profile_card">
-  <div class="col-md-9 profile_card">
+  <div class="col-md-9 mx-auto profile_card">
     <ul class='coolbeans' id="conversations-list">
     </ul>
 </div>
+
 
 
 <% if @profile.id == current_user.id%>

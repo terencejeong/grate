@@ -10,7 +10,7 @@
   background-color: #1F2833;
   color: white;
   background-size: cover;
-  height: 100vh
+  height: 200vh
 
 }
 
@@ -24,6 +24,9 @@
 
 }
 
+.cool{
+  text-align: center;
+}
 .profile_image{
   overflow:hidden;
    -webkit-border-radius:50px;
@@ -51,6 +54,7 @@
   width: 100%;
   justify-content: space-around;
   font-size: 20px;
+  background-color: #1F2833;
 }
 
 
@@ -58,4 +62,38 @@
   font-family: 'Maven Pro', sans-serif;
   padding-top: 20px;
   padding-bottom: 20px;
+  text-align: center;
+}
+
+.styling_reviews{
+  text-align: center;
+}
+
+.styling_reviews h3 a{
+  font-family: 'Maven Pro', sans-serif;
+  color: #66FCF1;
+}
+
+.styling_reviews h4{
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.new_review{
+  text-align: center;
+}
+
+.form_review{
+  text-align: center;
+}
+
+.little_icons{
+    margin-left: 15px;
+    overflow:hidden;
+     -webkit-border-radius:50px;
+     -moz-border-radius:50px;
+     border-radius:65px;
+     width:40px;
+     height:40px;
+     background-size:90px 0px;
+
 }
