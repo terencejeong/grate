@@ -1,12 +1,22 @@
 <h1> testing</h1>
 <tbody>
     <tr>
+      <div class="container">
+      <div class="row">
 
   <% @items.each do |item| %>
 
-      <td><%= item.description %></td>
-      <td><%= item.price %></td>
-      <td><img src="<%= item.image_url%>"></td>
 
-  <% end %>
-</tbody>
+    <div class="card col-12 col-md-4">
+      <div class="grow pic">
+      <img class="card-img-top" src="<%= item.image_url%>" alt="Card image cap">
+    </div>
+      <div class="card-block">
+        <h4 class="card-title"><%=item.description%></h4>
+        <p class="card-text">$<%=item.price%></p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <% end %>
+    </div>
+  </div>
