@@ -1,6 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 
+<div class="card mx-auto col-12 col-sm-7">
+  <img class="card-img-top" src="<%= @item.image_url%>" alt="Card image cap" id="img">
+  <div class="card-body"> Some more card content </div>
+</div>
+
+
+<div class="wrap" id="wrap">
+  <div class="prev">
+     <p class ="john_smells">
+        <img src="<%= @item.image_url%>" width="400px" id="img"/>
+        <%=@item.description%>
+        <%= @item.price%>
+        <h4>Click to close</h4>
+     </p>
+  </div>
+</div>
 <p>
   <strong>User:</strong>
   <%= @item.user.email %>
@@ -15,20 +31,26 @@
   <strong>Price:</strong>
   <%= @item.price %>
 </p>
+</div>
 
-<p>
-  <strong>Image data:</strong>
-  <img src="<%= @item.image_url%>">
-</p>
 
-<div class="row">
+
+<!-- <div class="row">
   <div class="col-md-9">
     <ul class='coolbeans' id="conversations-list">
     </ul>
-  </div>
+  </div> -->
+
+
+
+    <div class="overlay" id="overlay"></div>
+
+
+  <script type="text/javascript" src="photo.js"></script>
 
     <% if @item.user != current_user %>
     <li><%= link_to @item.user.email, conversations_path(user_id: @item), remote: true, method: :post %></li>
     <% end%>
+<%= link_to 'Profile', user_path(@item.user.id)%>
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

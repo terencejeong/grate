@@ -1,0 +1,12 @@
+<h1> testing</h1>
+<tbody>
+    <tr>
+
+  <% @items.each do |item| %>
+
+      <td><%= item.description %></td>
+      <td><%= item.price %></td>
+      <td><img src="<%= item.image_url%>"></td>
+
+  <% end %>
+</tbody>
