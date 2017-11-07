@@ -92,6 +92,14 @@
 <%end%>
 </div>
 
+<div id='map' style='width: 50%; height: 20%'></div>
+
+<div class="row profile_card">
+  <div class="col-md-9 mx-auto profile_card">
+    <ul class='coolbeans' id="conversations-list">
+    </ul>
+</div>
+
 
 
 
@@ -112,11 +120,8 @@
 <!-- <#% if @profile.id != current_user.id%> -->
   <!-- <iframe width="90%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/122923868&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe> -->
 <!-- <#%end%> -->
-<div class="row profile_card">
-  <div class="col-md-9 mx-auto profile_card">
-    <ul class='coolbeans' id="conversations-list">
-    </ul>
-</div>
+
+
 
 
 
@@ -127,3 +132,21 @@
 <%#= link_to 'Contact', contact_profile_path(@profile.user.id) %>
 </div>
 </div>
+<script>
+          function initialize() {
+            var location = {lat: <%= @profile.latitude %>, lng: <%= @profile.longitude %>};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              center: location,
+              zoom: 14
+            });
+            var marker = new google.maps.Marker({
+              position: location,
+              map: map
+            });
+            infoWindow.open(map, marker);
+          }
+          google.maps.event.addDomListener(window, 'load', initialize);
+      </script>
+<script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMjqtFl3iPmZrjcaLdps6Yyl28PMfRxWE&callback=initMap">
+</script>
