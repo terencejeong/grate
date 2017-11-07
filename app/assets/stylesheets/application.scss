@@ -31,6 +31,11 @@
 //   background-color:#1F2833
 // }
 
+* {
+ box-sizing: border-box;
+ // border: 1px black solid;
+}
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -162,3 +167,42 @@ html, body {
  audio {
    display: none;
  }
+
+ .fixing_comments{
+   width: 100%
+ }
+
+ .instaimage{
+  padding-right: 0;
+  padding-bottom: 5px;
+  height: 100%;
+
+
+}
+
+
+@media (min-width: 768px){
+.col-md-4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.3333333333%;
+    flex: 0 0 33.3333333333%;
+    max-width: 32.3333333333%;
+}
+}
+
+
+.grow img {
+  height: 300px;
+  width: 300px;
+
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+.grow img:hover {
+  width: 400px;
+  height: 400px;
+}
