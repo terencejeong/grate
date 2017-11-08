@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   resources :offers
-  resources :items
+
+  resources :items do
+    member do
+      post 'charge'
+    end
+  end
+
+
+
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :users, only: [:show, :update, :index, :contact, :destroy], controller: :profiles do
@@ -9,6 +17,8 @@ Rails.application.routes.draw do
   resource :profile
 
   get 'equipment', to: 'items#equipment', as: 'equipment'
+
+  get 'thanks', to: 'items#thanks', as: 'thanks'
 
   resources :conversations, only: [:create] do
     member do

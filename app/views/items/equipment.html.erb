@@ -1,22 +1,19 @@
-<h1> testing</h1>
-<tbody>
-    <tr>
-      <div class="container">
-      <div class="row">
 
-  <% @items.each do |item| %>
-
-
-    <div class="card col-12 col-md-4">
-      <div class="grow pic">
-      <img class="card-img-top" src="<%= item.image_url%>" alt="Card image cap">
-    </div>
-      <div class="card-block">
-        <h4 class="card-title"><%=item.description%></h4>
-        <p class="card-text">$<%=item.price%></p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-    <% end %>
-    </div>
+<div class="container-fluid dj_equipment">
+<div class="row mx-auto">
+<% @items.each do |item| %>
+  <div class="card col-12 col-md-4 space_jam">
+    <div class="grow pic">
+    <img class="card-img-top" src="<%= item.image_url%>" alt="Card image cap">
   </div>
+    <div class="card-block">
+      <h4 class="card-title"><%=item.description%></h4>
+      <p class="card-text">$<%=item.price%></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+    <%= link_to 'Show', item_path(item) %>
+  </div>
+  <% end %>
+  </div>
+</div>
+<%= link_to 'Back', items_path %>

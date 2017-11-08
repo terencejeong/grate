@@ -1,3 +1,40 @@
 // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// background for index page
+.dj_equipment{
+  background-color: #1F2833;
+  margin: 0;
+  height: 300vh;
+  background-size: cover;
+}
+
+
+// styling for margins in cards.
+ .space_jam {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  background-color: rgba(102,	252,241, 0.6)!important;
+  color: #1F2833;
+  // border: 2px solid #66FCF1 !important;
+}
+
+ .card-title {
+  text-align: center !important;
+}
+
+.card-text{
+  text-align: center;
+  font-size: 30px
+}
+
+  //
+
+.selling_items{
+  padding-bottom: 20px;
+}

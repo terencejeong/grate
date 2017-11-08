@@ -12,9 +12,7 @@
 <div class="wrap" id="wrap">
   <div class="prev">
      <p class ="john_smells">
-        <img src="<%= @item.image_url%>" width="400px" id="img"/>
-        <%=@item.description%>
-        <%= @item.price%>
+        <img src="/meme-dj-donald-trump.png" width="400px" id="img"/>
         <h4>Click to close</h4>
      </p>
   </div>
@@ -36,7 +34,7 @@
 </div>
 
 
-
+<%= render 'charge'%>
 <!-- <div class="row">
   <div class="col-md-9">
     <ul class='coolbeans' id="conversations-list">
