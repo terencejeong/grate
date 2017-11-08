@@ -5,7 +5,9 @@ class Profile < ApplicationRecord
   has_many :reviews
    include ImageUploader::Attachment.new(:avatar)
 
-     geocoded_by :address
+  geocoded_by :address
+  has_many :reviews
 
-     after_validation :geocode
+
+  after_validation :geocode
 end
