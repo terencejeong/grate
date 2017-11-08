@@ -32,6 +32,7 @@ gem 'geocoder'
 #gem for Devise
 gem 'devise'
 
+
 #gem for cloudinary
 gem "shrine-cloudinary"
 

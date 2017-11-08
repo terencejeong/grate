@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :offers
 
   resources :items do
@@ -14,7 +15,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :update, :index, :contact, :destroy], controller: :profiles do
     resources :reviews, controller: :reviews
   end
-  resource :profile
+  resource :profile do
+    member do
+      post '/rate' => 'rater#create', :as => 'rate'
+    end
+  end 
 
   get 'equipment', to: 'items#equipment', as: 'equipment'
 
