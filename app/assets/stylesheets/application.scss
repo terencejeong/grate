@@ -50,7 +50,7 @@ html, body {
 
 .message-sent {
   position: relative;
-  background-color: #D9EDF7;
+  background-color: #1F2833;
   border-color: #BCE8F1;
   margin: 5px 20px;
   padding: 10px;
@@ -59,8 +59,9 @@ html, body {
 
 
 .message-received {
-  background-color: #F1F0F0;
-  border-color: #EEEEEE;
+  color: black;
+  background-color: #66FCF1;
+  border: 1px solid #1F2833;
   margin: 5px 20px;
   padding: 10px;
   float: left;
@@ -78,6 +79,39 @@ html, body {
     background-color: #66FCF1;
     border-color: #1F2833; /*set the color you want here*/
 }
+
+.message_box{
+  margin-top: 30px;
+}
+.top_message{
+  background-color: #66FCF1;
+  text-align: center;
+  color: #1F2833
+}
+
+.profile_card{
+  background-color: #66FCF1;
+  padding: 0;
+}
+
+.form-control{
+  background-color: #66FCF1;
+  border: 1px solid #1F2833;
+}
+
+.btn-success {
+  color: #fff;
+  background-color:#1F2833;
+  border-color: #66FCF1;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success{
+    color: black;
+    background-color:#66FCF1;
+    border-color:#1F2833 ; /*set the color you want here*/
+}
+
 
 .thumb {
    border: none;
@@ -122,6 +156,9 @@ html, body {
  // .coffee_center{
  //   padding-left: 300px
  // }
+
+// styling card
+
 
  .john_smells{
    margin: 0px;

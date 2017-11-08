@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
@@ -29,6 +31,9 @@ gem 'jquery-rails'
 gem 'geocoder'
 #gem for Devise
 gem 'devise'
+
+#gem for cloudinary
+gem "shrine-cloudinary"
 
 #gem for shrine
 gem "shrine"
