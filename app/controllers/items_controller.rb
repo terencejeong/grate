@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:charge, :show, :edit, :update,  :destroy]
 
   # GET /items
   # GET /items.json
@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @conversations = Conversation.includes(:recipient, :messages)
+    @item.user = current_user
   end
 
   # GET /items/new
@@ -31,6 +32,55 @@ class ItemsController < ApplicationController
   #GET /items for user
   def equipment
     @items = Item.where(user_id: params[:user_id])
+  end
+
+
+  def charge
+
+    #amount of item.
+    @amount = @item.price
+    #description of item.
+    @description = @item.description
+
+    #situation when the user makes their first purchase.
+    if current_user.stripe_id == nil
+    customer = StripeTool.create_customer(
+    email: params[:stripeEmail],
+    stripe_token: params[:stripeToken]
+    )
+
+    charge = StripeTool.create_charge(
+    customer_id: customer.id,
+    amount: @amount,
+    description: @description
+    )
+    current_user.stripe_id = customer.id
+    current_user.save!()
+
+    @transaction = Transaction.create(user_id: current_user.id, charge_id: charge.id)
+    @transaction.save
+
+    redirect_to root_path
+
+  else
+
+    #sitiuation when returning user buys an item.
+    
+    charge = StripeTool.create_charge(
+    customer_id: current_user.stripe_id,
+    amount: @amount,
+    description: @description
+    )
+
+    @transaction = Transaction.create(user_id: current_user.id, charge_id: charge.id)
+    @transaction.save
+
+    redirect_to root_path
+
+  end
+
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
   end
   # POST /items
   # POST /items.json
@@ -48,6 +98,7 @@ class ItemsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
@@ -72,6 +123,7 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

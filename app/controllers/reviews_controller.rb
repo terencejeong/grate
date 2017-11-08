@@ -18,10 +18,10 @@ class ReviewsController < ApplicationController
 
    if @review.save
     flash[:success] = "You commented the hell out of that post!"
-       redirect_to root_path
+       redirect_to user_path(params[:user_id])
   else
     flash[:alert] = "Check the comment form, something went horribly wrong."
-     redirect_to root_path
+     redirect_to user_path(params[:user_id])
    end
   end
 
@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
    @user= User.find(params[:user_id])
    @review = @user.reviews.find(params[:id])
    @review.destroy
-   redirect_to root_path
+   redirect_to user_path(params[:user_id])
   end
 
  private

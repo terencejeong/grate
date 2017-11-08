@@ -15,12 +15,16 @@
 <div class="container">
 <div class="row">
 <% @items.each do |item| %>
-  <div class="card col-12 col-md-4">
+  <div class="card col-12 col-sm-4">
     <img class="card-img-top" src="<%= item.image_url%>" alt="Card image cap">
     <div class="card-block">
       <h4 class="card-title"><%=item.description%></h4>
       <p class="card-text">$<%=item.price%></p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <% if item.user = current_user %>
+      <p class='card-text'><%= link_to 'Show', item %></td>
+        <%= link_to 'Edit', edit_item_path(item) %></td>
+        <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <%end%>
     </div>
   </div>
   <% end %>
