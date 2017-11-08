@@ -1,7 +1,6 @@
 <li>
-  <div class="card card-default" data-conversation-id="<%= conversation.id %>">
-    <div class="card-heading">
-      <%=conversation.opposed_user(user).email%>
+  <div class="card card-default message_box" data-conversation-id="<%= conversation.id %>">
+    <div class="card-heading top_message">
       <%= link_to conversation.opposed_user(user).email, '', class: 'toggle-window' %>
       <%= link_to "x", close_conversation_path(conversation), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %>
     </div>
