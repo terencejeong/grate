@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:charge, :show, :edit, :update,  :destroy]
 
+  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
+
   # GET /items
   # GET /items.json
   def index
@@ -30,7 +32,6 @@ class ItemsController < ApplicationController
 
   #GET /items for user
   def equipment
-
     @items = Item.where(user_id: params[:user_id])
   end
 

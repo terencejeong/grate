@@ -1,5 +1,15 @@
 
+<% if current_user == nil%>
+<%= render 'items/new_nav' %>
+<% end %>
+
+<div class="home align-content-center">
+      <img src ="/djmusiccrowd.jpg" alt"chilled" class="landing">
+</div>
+
+
 <h1 class="decorated selling_items"><span>DJ Equipment</span></h1>
+
 
 
 <div class="container-fluid dj_equipment">
@@ -10,7 +20,8 @@
     <div class="card-block">
       <h4 class="card-title description_of_item"><%=item.description%></h4>
       <p class="card-text">$<%=item.price%></p>
-        <%= link_to 'Show', item %>
+      <p class="card-text"><%=item.user.profile.username%>
+        <p><%= link_to 'Show', item %></p>
         <%if item.user = current_user %>
         <%= link_to 'Edit', edit_item_path(item) %></td>
         <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
