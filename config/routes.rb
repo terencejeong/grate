@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     member do
       post '/rate' => 'rater#create', :as => 'rate'
     end
-  end 
+  end
 
   get 'equipment', to: 'items#equipment', as: 'equipment'
 
@@ -34,6 +34,6 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
-  root 'home#index'
+  root 'items#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

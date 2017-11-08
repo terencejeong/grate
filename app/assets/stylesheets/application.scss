@@ -64,6 +64,20 @@ html, body {
   font-family: 'Play', sans-serif;
 }
 
+.menu_button {
+  color: #fff;
+  background-color:#1F2833;
+  border-color: #66FCF1;
+  height: 40px;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.menu_button:hover, .menu_button:focus, .menu_button:active, .menu_button.active, .open>.dropdown-toggle.menu_button{
+    color: black;
+    background-color: #66FCF1;
+    border-color: #1F2833; /*set the color you want here*/
+}
+
 .btn-primary {
   color: #fff;
   background-color:#1F2833;
@@ -96,6 +110,7 @@ html, body {
   background-color: #66FCF1;
   border: 1px solid #1F2833;
 }
+
 
 .btn-success {
   color: #fff;

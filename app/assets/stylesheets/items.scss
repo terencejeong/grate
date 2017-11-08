@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.home .landing{
+  width: 100%
+}
+
 // background for index page
 .dj_equipment{
   background-color: #1F2833;
@@ -19,11 +23,20 @@
   margin-top: 10px;
   padding-left: 0px !important;
   padding-right: 0px !important;
-  background-color: rgba(102,	252,241, 0.6)!important;
-  color: #1F2833;
+  border: 1px solid #66FCF1!important;
+  background-color: rgba(31, 40, 51, 0.1)!important;
+  color: white;
   // border: 2px solid #66FCF1 !important;
 }
 
+.space_jam:hover{
+  background-color: #66FCF1!important;
+  color: black;
+}
+
+// rgba(102,	252,241, 0.6)
+
+//
  .card-title {
   text-align: center !important;
 }
