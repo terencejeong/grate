@@ -60,12 +60,14 @@
 </div>
 
 
-<h2 class="view_profile dj_bio"> About the DJ</h2>
+<h2 class="decorated"> <span>About the DJ</span></h2>
 <p class="about_the_dj col-10 col-12">
   <%= @profile.about_me %>
 </p>
 
-<h2 class="view_profile">Reviews</h2>
+
+
+<h2 class="decorated"> <span>Reviews</span></h2>
 <div class="styling_reviews">
   <% @profile.reviews.each do |review|%>
   <img class='little_icons' src='<%=review.user.profile.avatar_url%>'>
@@ -74,7 +76,7 @@
   <h4 class="styling_reviews" ><%= review.content %></h4>
     <br>
       <% if review.user.id == current_user.id%>
-      <%= link_to 'delete', [review.user, review],
+      <%#= link_to 'delete', [review.user, review],
                        method: :delete,
                        data: { confirm: 'Are you sure?' }%>
       <% end %>

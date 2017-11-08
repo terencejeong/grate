@@ -17,7 +17,6 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @conversations = Conversation.includes(:recipient, :messages)
-    @item.user = current_user
   end
 
   # GET /items/new
@@ -31,6 +30,7 @@ class ItemsController < ApplicationController
 
   #GET /items for user
   def equipment
+
     @items = Item.where(user_id: params[:user_id])
   end
 
@@ -65,7 +65,7 @@ class ItemsController < ApplicationController
   else
 
     #sitiuation when returning user buys an item.
-    
+
     charge = StripeTool.create_charge(
     customer_id: current_user.stripe_id,
     amount: @amount,
@@ -143,6 +143,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:user_id, :description, :price, :image)
+      params.require(:item).permit(:user_id, :name, :description, :price, :image)
     end
 end

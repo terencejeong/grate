@@ -1,32 +1,25 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Items</h1>
-<!--
-    <#% @items.each do |item| %>
-        <#%= link_to item do%>
-          <img class="instaimage col-md-4"src="<#%= item.image_url%>">
-        <#%end%>
-    <#% end %>
+<h1 class="decorated selling_items"><span>DJ Equipment</span></h1>
 
-<br> -->
 
-<%= link_to 'New Item', new_item_path %>
-
-<div class="container">
-<div class="row">
+<div class="container-fluid dj_equipment">
+<div class="row mx-auto">
 <% @items.each do |item| %>
-  <div class="card col-12 col-sm-4">
+  <div class="card col-12 col-md-4  space_jam">
     <img class="card-img-top" src="<%= item.image_url%>" alt="Card image cap">
     <div class="card-block">
-      <h4 class="card-title"><%=item.description%></h4>
+      <h4 class="card-title description_of_item"><%=item.description%></h4>
       <p class="card-text">$<%=item.price%></p>
-      <% if item.user = current_user %>
-      <p class='card-text'><%= link_to 'Show', item %></td>
+        <%= link_to 'Show', item %>
+        <%if item.user = current_user %>
         <%= link_to 'Edit', edit_item_path(item) %></td>
-        <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        <%end%>
+        <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
     </div>
   </div>
   <% end %>
   </div>
 </div>
+
+
+<%= link_to 'New Item', new_item_path %>

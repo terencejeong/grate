@@ -57,13 +57,36 @@
   background-color: #1F2833;
 }
 
-
-.about_the_dj{
-  font-family: 'Maven Pro', sans-serif;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center;
+// styling of ABOUT DJ
+.decorated{
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Play', sans-serif;
+    color: #66FCF1;
+    background-color: #1F2833;
+    text-align: center;
+    padding-top: 40px;
+    margin: 0
+ }
+.decorated > span{
+    position: relative;
+    display: inline-block;
 }
+.decorated > span:before, .decorated > span:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-bottom: 2px solid;
+    width: 592px; /* half of limiter */
+    margin: 0 20px;
+}
+.decorated > span:before{
+    right: 100%;
+}
+.decorated > span:after{
+    left: 100%;
+}
+
 
 .styling_reviews{
   text-align: center;
