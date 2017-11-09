@@ -67,9 +67,11 @@ class ItemsController < ApplicationController
 
     @transaction = Transaction.create(user_id: current_user.id, charge_id: charge.id)
     @transaction.save
-
+    email = current_user.email
+    contact_name = current_user.profile.first_name
+    message = @transaction.charge_id
+    ContactMailer.send_contact_email(email,contact_name, message,).deliver_now
     redirect_to root_path
-
   else
 
     #sitiuation when returning user buys an item.
@@ -82,7 +84,10 @@ class ItemsController < ApplicationController
 
     @transaction = Transaction.create(user_id: current_user.id, charge_id: charge.id)
     @transaction.save
-
+    email = current_user.email
+    contact_name = current_user.profile.first_name
+    message = @transaction.charge_id
+    ContactMailer.send_contact_email(email,contact_name, message,).deliver_now
     redirect_to root_path
 
   end
