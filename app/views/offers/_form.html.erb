@@ -23,6 +23,12 @@
     <%= form.text_area :detail, id: :offer_detail, class: 'coolform' %>
   </div>
 <br>
+
+  <div class="field">
+    <%= form.label :type_of_event %>
+    <%= form.select :event, ["16th", "18th", "21st", "Corporate", "Club"]%>
+  </div>
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>

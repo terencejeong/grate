@@ -11,41 +11,39 @@
     </div>
   <% end %>
 
+
+  <div class="field condition_item_style">
+    <p><%= form.label :about_me %></p>
+    <%= form.text_area :about_me, id: :profile_about_me, class: 'coolform' %>
+  </div>
+
+  <div class="field">
+  <p><%= form.label :first_name %></p>
+    <%= form.text_field :first_name, id: :profile_first_name, class: 'coolform'%>
+  </div>
+
+  <div class="field">
+  <p><%= form.label :last_name %></p>
+    <%= form.text_field :last_name, id: :profile_last_name, class: 'coolform' %>
+  </div>
+
+  <div class="field">
+    <p><%= form.label :username %></p>
+    <%= form.text_field :username, id: :profile_username, class: 'coolform' %>
+  </div>
+
+  <div class="field">
+    <p><%= form.label :address %></p>
+    <%= form.text_field :address, id: :profile_address, class: 'coolform' %>
+  </div>
+<br>
   <div class="field">
     <%= form.label :avatar_data %>
     <%= form.file_field :avatar, id: :profile_avatar_data %>
   </div>
-
-
-  <div class="field">
-    <%= form.label :about_me %>
-    <%= form.text_area :about_me, id: :profile_about_me %>
-  </div>
-
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, id: :profile_first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, id: :profile_last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username, id: :profile_username %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :profile_address %>
-  </div>
-
-
-
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>
-
+<br>
 <% end %>
