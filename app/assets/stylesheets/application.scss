@@ -38,6 +38,20 @@ html, body {
   overflow-x: hidden;
 }
 
+// styling registrations
+.styling_registration{
+  font-family: 'Play', sans-serif;
+  font-size: 40px
+}
+.styling_new_registration{
+  padding-top: 100px;
+  text-align: center;
+  background-color: #1F2833;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 20px;
+  color: white;
+  height: 100vh
+}
 
 
 .searchbar{
@@ -77,6 +91,7 @@ input::placeholder{
   background-color: #1F2833;
   border-color: #BCE8F1;
   margin: 5px 20px;
+  border-radius: 4px;
   padding: 10px;
   float: right;
   font-family: 'Play', sans-serif;
@@ -88,6 +103,7 @@ input::placeholder{
   background-color: #66FCF1;
   border: 1px solid #1F2833;
   margin: 5px 20px;
+  border-radius: 4px;
   padding: 10px;
   float: left;
   font-family: 'Play', sans-serif;
@@ -154,7 +170,17 @@ input::placeholder{
     border-color:#1F2833 ; /*set the color you want here*/
 }
 
-
+// styling stripe
+.stripe_box{
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 60px
+}
+.stripe_styling{
+  background-color:#1F2833;
+  margin-top: 0;
+  text-align: center;
+}
 .thumb {
    border: none;
    margin: 20px;
@@ -265,7 +291,7 @@ input::placeholder{
 }
 }
 
-// css for grow images. 
+// css for grow images.
 // .grow img {
 //   height: 300px;
 //   width: 300px;

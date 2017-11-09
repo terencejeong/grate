@@ -28,18 +28,17 @@
     <img class="card-img-top" src="<%= item.image_url%>" alt="Card image cap">
     <%end%>
     <div class="card-block">
-      <p class="card-text item_condition">Name</p>
-    <p class="card-text description_of_item"><%= item.name%></p>
-     <p class="card-text item_condition">Sold By</p>
-     <p class='card-text'>
-      <span><img class='little_icons' src='<%=item.user.profile.avatar_url%>'></span><%= link_to "#{item.user.profile.username}", user_path(item.user.id), class: 'username_styling' %>
-    </p>
-      <!-- <p class="card-text item_condition">Item Condition</p>
-      <p class="card-text description_of_item"><%#=item.description%></p> -->
-      <p class="card-text item_condition">Price</p>
-      <p class="card-text">$<%=item.price%></p>
-      <p class="card-text">
-
+      <p class='item_show_condition'>
+      <span class='item_underline'><strong>Item</strong></span>: <%= item.name %>
+      </p>
+      <p class='item_show_condition'>
+      <span class='item_underline'><strong>Sold by</strong></span>:<span><img class='little_icons' src='<%=item.user.profile.avatar_url%>'></span><%= link_to "#{item.user.profile.username}", user_path(item.user.id), class: 'username_styling' %>
+      </p>
+      <p class='item_show_condition'>
+      <span class='item_underline'><strong>Brand</strong></span>:  <%= item.category %>
+      </p>
+      <p class='item_show_condition'>
+        <span class='item_underline'><strong>Price</strong></span>: $<%= item.price %>
       </p>
 
         <%if item.user == current_user %>

@@ -1,13 +1,11 @@
+<div class='stripe_box'>
 <%= form_tag charge_item_path do %>
-  <article>
+  <article class="stripe_styling">
     <% if flash[:error].present? %>
       <div id="error_explanation">
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: <%=@item.price%></span>
-    </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -17,3 +15,4 @@
           data-email="<%= current_user.email %>"
           data-locale="auto"></script>
 <% end %>
+</div>
