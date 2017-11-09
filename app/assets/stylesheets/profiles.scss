@@ -110,10 +110,13 @@
 .styling_reviews h3 a{
   font-family: 'Maven Pro', sans-serif;
   color: #66FCF1;
+  padding-bottom: 0;
 }
 
-.styling_reviews h4{
+.styling_review_content h4{
   font-family: 'Maven Pro', sans-serif;
+  font-size: 20px
+
 }
 
 .description_of_item{
@@ -153,7 +156,9 @@
      background-size:90px 0px;
 
 }
-
+.review_icons{
+  padding-top: 15px;
+}
 .john_is_correct{
   text-align: center;
 }
