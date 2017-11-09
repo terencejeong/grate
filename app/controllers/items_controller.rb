@@ -7,6 +7,13 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+
+    if params[:search]
+  @items = Item.search(params[:search]).order("created_at DESC")
+    else
+  @items = Item.all.order("created_at DESC")
+    end
+
     session[:conversations] ||= []
 
   @users = User.all.where.not(id: current_user)
@@ -39,7 +46,7 @@ class ItemsController < ApplicationController
   def charge
 
     #amount of item.
-    @amount = @item.price
+    @amount = @item.price*100
     #description of item.
     @description = @item.description
 
@@ -52,7 +59,7 @@ class ItemsController < ApplicationController
 
     charge = StripeTool.create_charge(
     customer_id: customer.id,
-    amount: @amount,
+    amount: @amount.to_i,
     description: @description
     )
     current_user.stripe_id = customer.id
@@ -144,6 +151,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:user_id, :name, :description, :price, :image)
+      params.require(:item).permit(:user_id, :name, :description, :price, :image, :version, :category)
     end
 end

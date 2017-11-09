@@ -10,7 +10,7 @@
   background-color: #1F2833;
   color: white;
   background-size: cover;
-  height: 250vh
+  height: auto;
 
 }
 
@@ -24,8 +24,11 @@
 
 }
 
+
+// styling profile page
 .cool{
   text-align: center;
+  padding-top: 30px;
 }
 .profile_image{
   overflow:hidden;
@@ -57,6 +60,7 @@
   font-size: 20px;
   background-color: #1F2833;
   padding-top: 10px;
+  position: sticky;
 }
 
 // styling of ABOUT DJ
@@ -103,16 +107,34 @@
   font-family: 'Maven Pro', sans-serif;
 }
 
+.description_of_item{
+  font-family: 'Maven Pro', sans-serif;
+}
+
 .new_review{
   text-align: center;
 }
 
+// styling review form
+
+.review_sheet{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .form_review{
   text-align: center;
+  background-color:  #1F2833;
+  color: #66FCF1;
+  border: 1px solid #66FCF1;
+  border-radius: 4px;
+  height: 50px;
+  width: 70%
 }
 
 .little_icons{
     margin-left: 15px;
+    margin-right: 15px;
     overflow:hidden;
      -webkit-border-radius:50px;
      -moz-border-radius:50px;

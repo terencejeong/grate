@@ -14,6 +14,9 @@
 <% if @profile.id != current_user.id%>
   <%= link_to 'Message Me', conversations_path(user_id: @user), remote: true, method: :post, class: 'btn btn-primary communication' %>
 <%end%>
+<% if @profile.id == current_user.id %>
+  <%= link_to 'New Item', new_item_path, class: 'btn btn-primary'%>
+  <%end%>
 <%= link_to "Items for Sale", equipment_path(user_id: @user), class: "btn btn-primary"%>
 <%= link_to 'Book a Show', new_offer_path(profile_id: @profile.id), class: "btn btn-primary"%>
 <!-- <button type="button" class="btn btn-primary">Items for Sale</button> -->
@@ -27,7 +30,7 @@
 
 
 
-<h2 class="decorated"> <span>Reviews</span></h2>
+<h2 class="decorated"> <span class="rating_review">Reviews</span></h2>
 <div class="styling_reviews">
   <% @profile.reviews.each do |review|%>
   <img class='little_icons' src='<%=review.user.profile.avatar_url%>'>
@@ -45,7 +48,7 @@
 
 
 
-
+<h2 class="decorated"> <span class="rating_review">Write a Review</span></h2>
 <div class="review_sheet">
 <%= form_for ([@user, @user.reviews.new]) do |f| %>
           <!-- <%#= f.label :comments %><br/> -->

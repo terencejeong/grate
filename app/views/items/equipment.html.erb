@@ -1,19 +1,24 @@
-
-<div class="container-fluid dj_equipment">
+<div class="backingcolor">
+<div class='item_styles'>
+<div class="container-fluid dj_equipment item_owner">
 <div class="row mx-auto">
 <% @items.each do |item| %>
   <div class="card col-12 col-md-4 space_jam">
-    <div class="grow pic">
     <img class="card-img-top" src="<%= item.image_url%>" alt="Card image cap">
-  </div>
     <div class="card-block">
-      <h4 class="card-title"><%=item.description%></h4>
+      <p class="card-text item_condition">Name</p>
+    <p class="card-text description_of_item"><%= item.name%></p>
+     <p class="card-text item_condition">Sold By</p>
+     <p class='card-text'>
+      <span><img class='little_icons' src='<%=item.user.profile.avatar_url%>'></span><%= link_to "#{item.user.profile.username}", user_path(item.user.id), class: 'username_styling' %>
+    </p>
+      <!-- <p class="card-text item_condition">Item Condition</p>
+      <p class="card-text description_of_item"><%#=item.description%></p> -->
       <p class="card-text">$<%=item.price%></p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
     <%= link_to 'Show', item_path(item) %>
+    </div>
   </div>
   <% end %>
   </div>
 </div>
-<%= link_to 'Back', items_path %>
+</div>

@@ -41,8 +41,37 @@ html, body {
 
 
 .searchbar{
-  background-color: #BCE8F1
+  width: 100px;
+  box-sizing: border-box;
+  border: 2px solid #66FCF1;
+  border-radius: 4px;
+  height: 40px;
+  font-size: 16px;
+  background-color:#1F2833;
+  color: #66FCF1;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+
+
 }
+
+input::placeholder{
+  color: white;
+  font-family: 'Play', sans-serif;
+}
+
+.search_error{
+  background-color:#1F2833;
+  color: #66FCF1;
+  margin: 0 auto;
+}
+
+// .searchbar{
+//   background-color: #BCE8F1
+// }
 .message-sent {
   position: relative;
   background-color: #1F2833;
@@ -236,19 +265,19 @@ html, body {
 }
 }
 
-
-.grow img {
-  height: 300px;
-  width: 300px;
-
-  -webkit-transition: all 1s ease;
-     -moz-transition: all 1s ease;
-       -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-          transition: all 1s ease;
-}
-
-.grow img:hover {
-  width: 400px;
-  height: 400px;
-}
+// css for grow images. 
+// .grow img {
+//   height: 300px;
+//   width: 300px;
+//
+//   -webkit-transition: all 1s ease;
+//      -moz-transition: all 1s ease;
+//        -o-transition: all 1s ease;
+//       -ms-transition: all 1s ease;
+//           transition: all 1s ease;
+// }
+//
+// .grow img:hover {
+//   width: 400px;
+//   height: 400px;
+// }
