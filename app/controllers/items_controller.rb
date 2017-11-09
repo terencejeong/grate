@@ -88,8 +88,8 @@ class ItemsController < ApplicationController
     contact_name = current_user.profile.first_name
     message = @transaction.charge_id
     ContactMailer.send_contact_email(email,contact_name, message,).deliver_now
-    redirect_to root_path
 
+    redirect_to root_path
   end
 
   rescue Stripe::CardError => e
