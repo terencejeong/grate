@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-
+<div class="container-fluid show_item_page">
 <div class="card mx-auto col-12 col-sm-7">
   <img class="card-img-top" src="<%= @item.image_url%>" alt="Card image cap" id="img">
-  <div class="card-body">
-    <%=@item.description%>
-  </div>
+  <!-- <div class="card-body">
+    <%#=@item.description%>
+  </div> -->
 </div>
 
 
@@ -18,35 +18,34 @@
   </div>
 </div>
 
-<p>
-<strong>Name:</strong>
-<%= @item.name %>
+<p class='item_show_condition'>
+<span class='item_underline'><strong>Item</strong></span>: <%= @item.name %>
 </p>
 
-<p>
-  <strong>Brand</strong>
-  <%= @item.category %>
+<p class='item_show_condition'>
+<span class='item_underline'><strong>Sold by</strong></span>: <span><img class='little_icons' src='<%=@item.user.profile.avatar_url%>'></span><%= @item.user.profile.username %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
+
+<p class='item_show_condition'>
+<span class='item_underline'><strong>Brand</strong></span>:  <%= @item.category %>
 </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
+<p class='item_show_condition'>
+  <span class='item_underline'><strong>Condition</strong></span>: <%= @item.description %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @item.user.profile.username %>
+<p class='item_show_condition'>
+  <span class='item_underline'><strong>Price</strong></span>: $<%= @item.price %>
+  <p class='contact_seller'><%= link_to 'Message Me',user_path(@item.user.id), class:'btn btn-primary communication' %></p>
+  <%= render 'charge'%>
 </p>
+
 
 </div>
 
 
-<%= render 'charge'%>
+
 
 
 
@@ -55,6 +54,4 @@
 
   <script type="text/javascript" src="photo.js"></script>
 
-<%= link_to 'Profile', user_path(@item.user.id)%>
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+</div>

@@ -27,6 +27,7 @@
   background-color: #1F2833;
   margin: 0;
   padding-top: 40px;
+  padding-bottom: 30px;
   height: auto;
   background-size: cover;
 }
@@ -60,9 +61,6 @@
 .space_jam:hover{
   background-color: rgba(102,	252,241, 0.6) !important;
   color: black;
-  .username_styling:hover {
-    color: black !important;
-  }
 }
 
 //styling for text in cards
@@ -72,11 +70,6 @@
 }
 
 
-
-
-//
-
-//
  .card-title {
   text-align: center !important;
 }
@@ -94,10 +87,79 @@
   text-decoration: underline;
 }
 
-.item_description{
+
+// styling for item show page
+
+.contact_seller{
+  text-align: center;
+}
+.show_item_page{
+  background-color: #1F2833;
+  padding-top: 100px;
+}
+
+.item_show_condition{
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  font-family: 'Maven Pro', sans-serif;
+  margin-bottom:0;
+  padding-bottom: 15px;
+  padding-top: 10px
+
 
 }
-  //
+
+.description_of_item{
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 30px;
+}
+
+.item_underline{
+  font-size: 30px;
+  font-family: 'Maven Pro', sans-serif;
+  text-decoration: underline #66FCF1;
+
+}
+// styling for item new
+.item_new_dj{
+  padding-top: 100px;
+  text-align: center;
+  background-color: #1F2833;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 20px;
+  color: white;
+  height: auto;
+}
+
+// styling new item form
+.condition_item_style{
+  text-align: center;
+}
+
+.coolform{
+  background-color:#1F2833;
+  border: 1px solid #66FCF1;
+  width: 50%;
+  color: #66FCF1
+}
+
+.submit_button{
+  width: 180px;
+  box-sizing: border-box;
+  border: 2px solid #66FCF1;
+  border-radius: 4px;
+  height: 40px;
+  font-size: 16px;
+  background-color:#1F2833;
+  color: #66FCF1;
+  background-position: 10px 10px;
+}
+
+.submit_button:hover{
+  background-color:#66FCF1 ;
+  color: black;
+}
 
 .selling_items{
   padding-bottom: 20px;

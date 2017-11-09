@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid show_item_page">
 
-<p>
-  <strong>User:</strong>
-  <%= @offer.user %>
+<p class='item_show_condition'>
+<span class='item_underline'><strong>Party Hoster</strong></span>: <%= @offer.user.profile.username %>
 </p>
 
-<p>
-  <strong>Profile:</strong>
-  <%= @offer.profile %>
+<p class='item_show_condition'>
+<span class='item_underline'><strong>DJ</strong></span>:  <%= @offer.profile.username %>
 </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @offer.date %>
+<p class='item_show_condition'>
+  <span class='item_underline'><strong>Details</strong></span>: <%= @offer.detail%>
 </p>
+
+<p class='item_show_condition'>
+  <span class='item_underline'><strong>Date of Event</strong></span>: <%= @offer.date %>
+
 
 <%= link_to 'Edit', edit_offer_path(@offer) %> |
 <%= link_to 'Back', offers_path %>
+</div>
