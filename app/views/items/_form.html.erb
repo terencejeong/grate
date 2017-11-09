@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_area :name, id: :item_name %>
+    <%= form.text_field :name, id: :item_name %>
   </div>
 
   <div class="field">
@@ -30,6 +30,11 @@
   <div class="field">
     <%= form.label :image_data %>
     <%= form.file_field :image, id: :item_image_data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.select :category, ["Sony", "Pioneer", "Ableton", "Yamaha"]%>
   </div>
 
   <div class="actions">

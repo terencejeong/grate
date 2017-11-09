@@ -7,6 +7,13 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+
+    if params[:search]
+  @items = Item.search(params[:search]).order("created_at DESC")
+    else
+  @items = Item.all.order("created_at DESC")
+    end
+    
     session[:conversations] ||= []
 
   @users = User.all.where.not(id: current_user)
@@ -144,6 +151,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:user_id, :name, :description, :price, :image)
+      params.require(:item).permit(:user_id, :name, :description, :price, :image, :category)
     end
 end

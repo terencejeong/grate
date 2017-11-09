@@ -14,6 +14,9 @@
 <% if @profile.id != current_user.id%>
   <%= link_to 'Message Me', conversations_path(user_id: @user), remote: true, method: :post, class: 'btn btn-primary communication' %>
 <%end%>
+<% if @profile.id == current_user.id %>
+  <%= link_to 'New Item', new_item_path, class: 'btn btn-primary'%>
+  <%end%>
 <%= link_to "Items for Sale", equipment_path(user_id: @user), class: "btn btn-primary"%>
 <%= link_to 'Book a Show', new_offer_path(profile_id: @profile.id), class: "btn btn-primary"%>
 <!-- <button type="button" class="btn btn-primary">Items for Sale</button> -->

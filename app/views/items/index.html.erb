@@ -3,6 +3,10 @@
 <%= render 'items/new_nav' %>
 <% end %>
 
+<% if @items.blank? %>
+  <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+<% end %>
+
 <div class="home align-content-center">
       <img src ="/djmusiccrowd.jpg" alt"chilled" class="landing">
 </div>
@@ -20,7 +24,9 @@
     <div class="card-block">
       <h4 class="card-title description_of_item"><%=item.description%></h4>
       <p class="card-text">$<%=item.price%></p>
-      <p class="card-text"><%=item.user.profile.username%>
+      <p class="card-text">
+    <span><img class='little_icons' src='<%=item.user.profile.avatar_url%>'></span>    <%= link_to "#{item.user.profile.username}", user_path(item.user.id), class: 'username_styling' %>
+      </p>
         <p><%= link_to 'Show', item %></p>
         <%if item.user = current_user %>
         <%= link_to 'Edit', edit_item_path(item) %></td>

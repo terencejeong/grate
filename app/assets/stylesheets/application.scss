@@ -41,8 +41,30 @@ html, body {
 
 
 .searchbar{
-  background-color: #BCE8F1
+  width: 100px;
+  box-sizing: border-box;
+  border: 2px solid #66FCF1;
+  border-radius: 4px;
+  height: 40px;
+  font-size: 16px;
+  background-color:#1F2833;
+  color: #66FCF1;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+
+
 }
+
+input::placeholder{
+  color: #66FCF1;
+}
+
+// .searchbar{
+//   background-color: #BCE8F1
+// }
 .message-sent {
   position: relative;
   background-color: #1F2833;

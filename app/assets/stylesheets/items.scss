@@ -26,15 +26,32 @@
   border: 1px solid #66FCF1!important;
   background-color: rgba(31, 40, 51, 0.1)!important;
   color: white;
+  .username_styling{
+    font-family: 'Maven Pro', sans-serif;
+    color: white;
   // border: 2px solid #66FCF1 !important;
+  }
 }
 
+// styling for cards on hover
 .space_jam:hover{
-  background-color: #66FCF1!important;
+  background-color: rgba(102,	252,241, 0.6) !important;
   color: black;
+  .username_styling:hover {
+    color: black !important;
+  }
 }
 
-// rgba(102,	252,241, 0.6)
+//styling for text in cards
+
+.card-title{
+  font-family: 'Maven Pro', sans-serif;
+}
+
+
+
+
+//
 
 //
  .card-title {
