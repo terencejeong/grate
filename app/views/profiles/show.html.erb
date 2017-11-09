@@ -8,17 +8,19 @@
 </div>
 
 
+
   <h1 class="view_profile"><%=@profile.username%></h1>
 
 <div class='puffles col-12 col-md-12'>
 <% if @profile.id != current_user.id%>
   <%= link_to 'Message Me', conversations_path(user_id: @user), remote: true, method: :post, class: 'btn btn-primary communication' %>
+  <%= link_to 'Book a Show', new_offer_path(profile_id: @profile.id), class: "btn btn-primary"%>
 <%end%>
+  <%= link_to "Items for Sale", equipment_path(user_id: @user), class: "btn btn-primary"%>
 <% if @profile.id == current_user.id %>
-  <%= link_to 'New Item', new_item_path, class: 'btn btn-primary'%>
-  <%end%>
-<%= link_to "Items for Sale", equipment_path(user_id: @user), class: "btn btn-primary"%>
-<%= link_to 'Book a Show', new_offer_path(profile_id: @profile.id), class: "btn btn-primary"%>
+<%= link_to 'New Item', new_item_path, class: 'btn btn-primary'%>
+<%= link_to 'Edit Profile', edit_profile_path(@profile), class: "btn btn-primary"%>
+<% end %>
 <!-- <button type="button" class="btn btn-primary">Items for Sale</button> -->
 </div>
 
@@ -28,7 +30,7 @@
     </ul>
 </div>
 
-<h2 class="decorated"> <span>About the DJ</span></h2>
+<h2 class="decorated"> <span>About Me</span></h2>
 <p class="about_the_dj col-10 col-12">
   <p class="about_me_bio"><%= @profile.about_me %></p>
 </p>
@@ -71,6 +73,9 @@
   <iframe width="70%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/258665732&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
 </div>
 
+<div class="upload_song">
+<button type="button" class="btn btn-primary">Upload song</button>
+</div>
 <!-- <p>
   <strong>First name:</strong>
   <%#= @profile.first_name %>
@@ -91,12 +96,6 @@
 
 
 
-
-
-<% if @profile.id == current_user.id%>
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', users_path %>
-<%end%>
 <%#= link_to 'Contact', contact_profile_path(@profile.user.id) %>
 </div>
 </div>
