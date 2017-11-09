@@ -12,18 +12,19 @@
   <% end %>
 
 <%= form.hidden_field :profile_id, :value => params[:profile_id]%>
-
+<br>
   <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date, id: :offer_date %>
+    <p><%= form.label :date %></p>
+    <%= form.date_select :date, id: :offer_date,  class: 'coolform' %>
   </div>
-
+<br>
   <div class="field">
-    <%= form.label :detail %>
-    <%= form.text_area :detail, id: :offer_detail %>
+  <p> <%= form.label :details %></p>
+    <%= form.text_area :detail, id: :offer_detail, class: 'coolform' %>
   </div>
-
+<br>
   <div class="actions">
     <%= form.submit %>
   </div>
+<br>
 <% end %>
