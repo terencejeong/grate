@@ -18,8 +18,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :item_condition %>
     <%= form.text_area :description, id: :item_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.number_field :version, id: :item_version%>
   </div>
 
   <div class="field">

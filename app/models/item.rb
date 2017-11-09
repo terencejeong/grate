@@ -3,6 +3,6 @@ class Item < ApplicationRecord
     include ImageUploader::Attachment.new(:image)
 
     def self.search(search)
-      where("name ILIKE ? OR category ILIKE ?", "%#{search}%", "%#{search}%") 
+      where("name ILIKE ? OR category ILIKE ?" , "%#{search}%", "%#{search}%") 
     end
 end

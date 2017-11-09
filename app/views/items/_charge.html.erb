@@ -6,14 +6,14 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: <%=@amount%></span>
+      <span>Amount: <%=@item.price%></span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="<%= @item.description%>"
-          data-amount="<%=@item.price%>"
+          data-amount="<%=@item.price*100%>"
           data-email="<%= current_user.email %>"
           data-locale="auto"></script>
 <% end %>

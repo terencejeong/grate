@@ -30,7 +30,7 @@
 
 
 
-<h2 class="decorated"> <span>Reviews</span></h2>
+<h2 class="decorated"> <span class="rating_review">Reviews</span></h2>
 <div class="styling_reviews">
   <% @profile.reviews.each do |review|%>
   <img class='little_icons' src='<%=review.user.profile.avatar_url%>'>
@@ -48,7 +48,7 @@
 
 
 
-
+<h2 class="decorated"> <span class="rating_review">Write a Review</span></h2>
 <div class="review_sheet">
 <%= form_for ([@user, @user.reviews.new]) do |f| %>
           <!-- <%#= f.label :comments %><br/> -->

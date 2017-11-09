@@ -17,9 +17,15 @@
      </p>
   </div>
 </div>
+
 <p>
-  <strong>User:</strong>
-  <%= @item.user.email %>
+<strong>Name:</strong>
+<%= @item.name %>
+</p>
+
+<p>
+  <strong>Brand</strong>
+  <%= @item.category %>
 </p>
 
 <p>
@@ -31,15 +37,16 @@
   <strong>Price:</strong>
   <%= @item.price %>
 </p>
+
+<p>
+  <strong>User:</strong>
+  <%= @item.user.profile.username %>
+</p>
+
 </div>
 
 
 <%= render 'charge'%>
-<!-- <div class="row">
-  <div class="col-md-9">
-    <ul class='coolbeans' id="conversations-list">
-    </ul>
-  </div> -->
 
 
 
@@ -48,9 +55,6 @@
 
   <script type="text/javascript" src="photo.js"></script>
 
-    <% if @item.user != current_user %>
-    <li><%= link_to @item.user.email, conversations_path(user_id: @item), remote: true, method: :post %></li>
-    <% end%>
 <%= link_to 'Profile', user_path(@item.user.id)%>
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

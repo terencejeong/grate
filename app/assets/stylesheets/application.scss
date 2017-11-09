@@ -59,7 +59,14 @@ html, body {
 }
 
 input::placeholder{
+  color: white;
+  font-family: 'Play', sans-serif;
+}
+
+.search_error{
+  background-color:#1F2833;
   color: #66FCF1;
+  margin: 0 auto;
 }
 
 // .searchbar{
@@ -258,19 +265,19 @@ input::placeholder{
 }
 }
 
-
-.grow img {
-  height: 300px;
-  width: 300px;
-
-  -webkit-transition: all 1s ease;
-     -moz-transition: all 1s ease;
-       -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-          transition: all 1s ease;
-}
-
-.grow img:hover {
-  width: 400px;
-  height: 400px;
-}
+// css for grow images. 
+// .grow img {
+//   height: 300px;
+//   width: 300px;
+//
+//   -webkit-transition: all 1s ease;
+//      -moz-transition: all 1s ease;
+//        -o-transition: all 1s ease;
+//       -ms-transition: all 1s ease;
+//           transition: all 1s ease;
+// }
+//
+// .grow img:hover {
+//   width: 400px;
+//   height: 400px;
+// }

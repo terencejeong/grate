@@ -2,20 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//styling for landingn image
 
 .home .landing{
-  width: 100%
+  width: 100%;
+  padding-top: 50px;
+  background-color: #1F2833
+}
+
+.backingcolor{
+  background-color: #1F2833;
+}
+
+.item_styles{
+  background-color: #1F2833;
+  color: white;
+  background-size: cover;
+  height: 150vh;
+
 }
 
 // background for index page
 .dj_equipment{
   background-color: #1F2833;
   margin: 0;
-  height: 300vh;
+  padding-top: 40px;
+  height: auto;
   background-size: cover;
 }
 
+.item_owner{
+  padding-top: 100px;
+}
 
+.container_items{
+  background-color: #1F2833;
+  text-align: center;
+}
 // styling for margins in cards.
  .space_jam {
   margin-left: 5px;
@@ -60,9 +83,20 @@
 
 .card-text{
   text-align: center;
-  font-size: 30px
+  font-size: 20px;
+  font-family: 'Maven Pro', sans-serif;
 }
 
+.item_condition{
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Maven Pro', sans-serif;
+  text-decoration: underline;
+}
+
+.item_description{
+
+}
   //
 
 .selling_items{

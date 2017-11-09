@@ -4,7 +4,7 @@
 <% end %>
 
 <% if @items.blank? %>
-  <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+  <h4 class="search_error">There are no items containing the term <%= params[:search] %>.</h4>
 <% end %>
 
 <div class="home align-content-center">
@@ -14,21 +14,35 @@
 
 <h1 class="decorated selling_items"><span>DJ Equipment</span></h1>
 
-
+<div class="container_items">
+<% if  user_signed_in? %>
+  <%= link_to 'New Item', new_item_path, class: 'btn btn-primary'%>
+  <%end%>
+</div>
 
 <div class="container-fluid dj_equipment">
 <div class="row mx-auto">
 <% @items.each do |item| %>
   <div class="card col-12 col-md-4  space_jam">
+    <%= link_to item do %>
     <img class="card-img-top" src="<%= item.image_url%>" alt="Card image cap">
+    <%end%>
     <div class="card-block">
-      <h4 class="card-title description_of_item"><%=item.description%></h4>
+      <p class="card-text item_condition">Name</p>
+    <p class="card-text description_of_item"><%= item.name%></p>
+     <p class="card-text item_condition">Sold By</p>
+     <p class='card-text'>
+      <span><img class='little_icons' src='<%=item.user.profile.avatar_url%>'></span><%= link_to "#{item.user.profile.username}", user_path(item.user.id), class: 'username_styling' %>
+    </p>
+      <!-- <p class="card-text item_condition">Item Condition</p>
+      <p class="card-text description_of_item"><%#=item.description%></p> -->
+      <p class="card-text item_condition">Price</p>
       <p class="card-text">$<%=item.price%></p>
       <p class="card-text">
-    <span><img class='little_icons' src='<%=item.user.profile.avatar_url%>'></span>    <%= link_to "#{item.user.profile.username}", user_path(item.user.id), class: 'username_styling' %>
+
       </p>
-        <p><%= link_to 'Show', item %></p>
-        <%if item.user = current_user %>
+
+        <%if item.user == current_user %>
         <%= link_to 'Edit', edit_item_path(item) %></td>
         <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
@@ -37,6 +51,3 @@
   <% end %>
   </div>
 </div>
-
-
-<%= link_to 'New Item', new_item_path %>
