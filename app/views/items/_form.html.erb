@@ -17,22 +17,22 @@
     <p><%= form.label :name %></p>
     <%= form.text_field :name, id: :item_name, class: 'coolform' %>
   </div>
-
+<br>
   <div class="field condition_item_style">
     <p><%= form.label :item_condition, class: 'condition_item_style' %></p>
     <%= form.text_area :description, id: :item_description, class: 'coolform' %>
   </div>
-
+<br>
   <div class="field">
-  <p><%= form.label :model %></p>
+  <p><%= form.label :model_year %></p>
     <%= form.number_field :version, id: :item_version, class: 'coolform'%>
   </div>
-
+<br>
   <div class="field">
   <p><%= form.label :price %></p>
     <%= form.number_field :price, id: :item_price, class: 'coolform' %>
   </div>
-
+<br>
   <div class="field">
     <p><%= form.label :image_data %></p>
     <%= form.file_field :image, id: :item_image_data, class: 'center_button'%>

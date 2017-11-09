@@ -3,10 +3,6 @@
 <%= render 'items/new_nav' %>
 <% end %>
 
-<% if @items.blank? %>
-  <h4 class="search_error">There are no items containing the term <%= params[:search] %>.</h4>
-<% end %>
-
 <div class="home align-content-center">
       <img src ="/djmusiccrowd.jpg" alt"chilled" class="landing">
 </div>
@@ -19,6 +15,11 @@
   <%= link_to 'New Item', new_item_path, class: 'btn btn-primary'%>
   <%end%>
 </div>
+
+<% if @items.blank? %>
+  <h4 class="search_error">There are no items containing the term <%= params[:search] %>.</h4>
+<% end %>
+
 
 <div class="container-fluid dj_equipment">
 <div class="row mx-auto">
