@@ -103,16 +103,24 @@ Screenshot of Trelloboard
 # Wire Frames
 
 ![Screenshot of WireFrames](/Users/terryjeong/desktop/codeacademy/grate/app/assets/images/Screen Shot 2017-11-10 at 2.01.32 pm.png)
+
 ![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.01.45 pm.png)
+
 ![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.02.53 pm.png)
+
 ![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.03.06 pm.png)
+
 ![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.10.55 pm.png)
+
 ![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.03.40 pm.png))
+
 ![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.04.11 pm.png)
 
 # High Fidelity Wireframes via Sketch
 ![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.15.25 pm.png)
+
 ![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.15.42 pm.png)
+
 ![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.15.54 pm.png)
 
 # Workflow diagram of user Journey
