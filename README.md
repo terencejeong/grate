@@ -33,18 +33,18 @@ users.
 event organizers.
 
 #Deliverables
-Design Documentation
+<!-- Design Documentation
 Demonstrate your ability to break down the problem and design a solution.
 - 1 - One page summary of your application including problem definition, solution.
-* [Summary](https://docs.google.com/a/ait.nsw.edu.au/document/d/13mxjUNT3aQET6Jh71z_n_RpkSBQhbySZ9jXxI2_yUg0/edit?usp=sharing)
+* [Summary](https://docs.google.com/a/ait.nsw.edu.au/document/d/13mxjUNT3aQET6Jh71z_n_RpkSBQhbySZ9jXxI2_yUg0/edit?usp=sharing) -->
 
 Buying DJ equipment is expensive and hard to get. There is no platform for DJ’s to sell or rent equipment that they are not using.
 
 There is also no platform for DJ’s to have a profile where people can see what music they play, if they do parties, and how much they charge.
 
-#The Target
+# The Target
 
-#SELLERS
+# SELLERS
 DJ’s with equipment they are not using and want to sell.
 
 DJ’s with equipment that they want to rent.
@@ -52,21 +52,21 @@ DJ’s with equipment that they want to rent.
 DJ’s who are just starting out and cannot afford to have a website or to sign to a label.
 
 
-#BUYERS
+# BUYERS
 People who want to rent DJ equipment.
 
 People who want to find a DJ for their parties.
 
-#The Pains
+# The Pains
 
-#SELLERS
+# SELLERS
 Have to list the item on eBay or GumTree not a community for DJ’s to sell items.
 
 Renting DJ equipment is from DJ Warehouse, who control the prices. A DJ can’t rent any equipment they may have.
 
 No platform for DJ’s to rent their equipment they are not using.
 
-#BUYERS
+# BUYERS
 No simple website with just second hand DJ equipment, hard to find the items that I want to buy.
 
 Renting equipment is expensive and has to be done from DJ Warehouse.
