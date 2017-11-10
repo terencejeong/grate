@@ -102,33 +102,36 @@ Screenshot of Trelloboard
 
 # Wire Frames
 
-![Screenshot of WireFrames](/Users/terryjeong/desktop/codeacademy/grate/app/assets/images/Screen Shot 2017-11-10 at 2.01.32 pm.png)
+![Screenshot of WireFrames](app/assets/images/login.png)
+![Screenshot of WireFrames](app/assets/images/itemwire.png)
 
-![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.01.45 pm.png)
+![Screenshot of WireFrames](app/assets/images/orderwire.png)
 
-![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.02.53 pm.png)
+![Screenshot of WireFrames](app/assets/images/purchasewire.png)
 
-![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.03.06 pm.png)
+![Screenshot of WireFrames](app/assets/images/profileitemwire.png)
 
-![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.10.55 pm.png)
+![Screenshot of WireFrames](app/assets/images/vidoeswire.png))
 
-![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.03.40 pm.png))
+![Screenshot of WireFrames](app/assets/images/detailswire.png)
 
-![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.04.11 pm.png)
+![Screenshot of WireFrames](app/assets/images/reviewswire.png)
 
 # High Fidelity Wireframes via Sketch
-![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.15.25 pm.png)
+![Screenshot of WireFrames](app/assets/images/loginsketch.png)
 
-![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.15.42 pm.png)
+![Screenshot of WireFrames](app/assets/images/profilesketch.png)
 
-![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.15.54 pm.png)
+![Screenshot of WireFrames](app/assets/images/forsalesketch.png)
+
+
 
 # Workflow diagram of user Journey
 ![Screenshot of WireFrames](app/assets/images/userflow.png)
 
 
 # ERD
-![Screenshot of WireFrames](app/assets/images/Screen Shot 2017-11-10 at 2.21.38 pm.png)
+![Screenshot of WireFrames](app/assets/images/erd.png)
 
 # Rails application code
 ### Demonstrate Ruby on Rails development skills.
